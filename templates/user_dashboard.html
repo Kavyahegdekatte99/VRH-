@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}My Favorites - VINAYAK REXINE HOUSE{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-dark-blue">
+                <i class="bi bi-star-fill me-2 text-warning"></i>My Favorite Products
+            </h2>
+            <p class="text-muted">Your starred products collection</p>
+        </div>
+    </div>
+    
+    {% if starred_products %}
+        <div class="row g-4">
+            {% for product in starred_products %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        {% if product[5] %} <!-- image_url -->
+                            <img src="{{ url_for('uploaded_file', filename=product[5]) }}" 
+                                 class="card-img-top" alt="{{ product[1] }}" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                <i class="bi bi-image text-muted" style="font-size: 3rem;"></i>
+                            </div>
+                        {% endif %}
+                        
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title text-dark-blue">{{ product[1] }}</h5>
+                                <button class="btn btn-link p-0 star-btn" data-product-id="{{ product[0] }}">
+                                    <i class="bi bi-star-fill text-warning" style="font-size: 1.2rem;"></i>
+                                </button>
+                            </div>
+                            
+                            {% if product[3] %} <!-- category -->
+                                <span class="badge bg-secondary mb-2">{{ product[3] }}</span>
+                            {% endif %}
+                            
+                            {% if product[4] and product[4] > 0 %} <!-- price -->
+                                <p class="text-gold fw-bold mb-2">₹{{ "%.2f"|format(product[4]) }}</p>
+                            {% endif %}
+                            
+                            {% if product[2] %} <!-- description -->
+                                <p class="card-text text-muted">{{ product[2] }}</p>
+                            {% endif %}
+                            
+                            <div class="mt-auto">
+                                <div class="d-flex gap-2 flex-wrap">
+                                    {% if product[6] %} <!-- pdf_url -->
+                                        <a href="{{ url_for('uploaded_file', filename=product[6]) }}" 
+                                           class="btn btn-outline-danger btn-sm" target="_blank">
+                                            <i class="bi bi-file-earmark-pdf me-1"></i>PDF
+                                        </a>
+                                    {% endif %}
+                                    {% if product[5] %} <!-- image_url -->
+                                        <a href="{{ url_for('uploaded_file', filename=product[5]) }}" 
+                                           class="btn btn-outline-primary btn-sm" target="_blank">
+                                            <i class="bi bi-image me-1"></i>View Image
+                                        </a>
+                                    {% endif %}
+                                    {% if product[7] %} <!-- video_url -->
+                                        <a href="{{ url_for('uploaded_file', filename=product[7]) }}" 
+                                           class="btn btn-outline-success btn-sm" target="_blank">
+                                            <i class="bi bi-play-circle me-1"></i>Video
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center py-5">
+                    <i class="bi bi-star display-1 text-muted mb-4"></i>
+                    <h3 class="text-muted">No favorites yet</h3>
+                    <p class="text-muted mb-4">Star products from the catalog to see them here!</p>
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="bi bi-house-door me-2"></i>Browse Catalog
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,394 @@
+/* Brand Colors */
+:root {
+    --dark-blue: #1e3a5f;
+    --gold: #d4af37;
+    --light-gold: #f4e89a;
+    --white: #ffffff;
+    --black: #000000;
+    --light-gray: #f8f9fa;
+}
+
+/* Custom Bootstrap Theme */
+.bg-dark-blue {
+    background-color: var(--dark-blue) !important;
+}
+
+.text-dark-blue {
+    color: var(--dark-blue) !important;
+}
+
+.text-gold {
+    color: var(--gold) !important;
+}
+
+.btn-primary {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+/* Navigation Styles */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: 60px 0;
+    border-bottom: 3px solid var(--gold);
+}
+
+/* Product Cards */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-card .card-img-top {
+    border-radius: 0.375rem 0.375rem 0 0;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Star Button */
+.star-btn {
+    background: none;
+    border: none;
+    color: #6c757d;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.star-btn:hover {
+    color: var(--gold) !important;
+    transform: scale(1.2);
+}
+
+.star-btn i.bi-star-fill {
+    color: var(--gold) !important;
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+}
+
+.input-group-text {
+    background-color: var(--light-gray);
+    border-color: #dee2e6;
+    color: var(--dark-blue);
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+.card-header.bg-dark-blue {
+    border-bottom: 2px solid var(--gold);
+}
+
+/* Badge Styles */
+.badge {
+    font-size: 0.75em;
+    font-weight: 500;
+}
+
+.bg-secondary {
+    background-color: var(--dark-blue) !important;
+}
+
+/* Table Styles */
+.table th {
+    background-color: var(--light-gray);
+    color: var(--dark-blue);
+    font-weight: 600;
+    border-bottom: 2px solid var(--gold);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* Button Styles */
+.btn {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Alert Styles */
+.alert {
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, #2c5f7c 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .product-card {
+        margin-bottom: 1rem;
+    }
+    
+    /* Mobile-specific enhancements */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Stack buttons vertically on mobile */
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+    
+    .d-flex.gap-2 {
+        flex-wrap: wrap;
+    }
+    
+    /* Improve touch targets */
+    .star-btn {
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    /* Mobile table responsiveness */
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    /* Contact section mobile optimization */
+    .row.text-center > div {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    /* Full width buttons on very small screens */
+    .btn-lg, .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .d-flex.gap-2 .btn {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Utility Classes */
+.min-vh-100 {
+    min-height: 100vh !important;
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--gold) 100%);
+}
+
+/* File Upload Styling */
+.form-control[type="file"] {
+    padding: 0.375rem 0.75rem;
+}
+
+.form-control[type="file"]::-webkit-file-upload-button {
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    margin-right: 0.75rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.form-control[type="file"]::-webkit-file-upload-button:hover {
+    background-color: var(--gold);
+}
+
+/* Image Thumbnails */
+.img-thumbnail {
+    border: 2px solid var(--light-gray);
+    transition: border-color 0.3s ease;
+}
+
+.img-thumbnail:hover {
+    border-color: var(--gold);
+}
+
+/* Contact Section Specific Styles */
+.bg-gold {
+    background-color: var(--gold) !important;
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+}

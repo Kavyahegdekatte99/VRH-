@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - VINAYAK REXINE HOUSE{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-6 text-center">
+            <div class="error-page">
+                <i class="bi bi-exclamation-triangle display-1 text-gold mb-4"></i>
+                <h1 class="display-4 text-dark-blue mb-3">404</h1>
+                <h2 class="h4 text-dark-blue mb-3">Page Not Found</h2>
+                <p class="text-muted mb-4">
+                    Sorry, the page you are looking for doesn't exist or has been moved.
+                </p>
+                <div class="d-flex gap-3 justify-content-center flex-column flex-md-row">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">
+                        <i class="bi bi-house-door me-2"></i>Back to Home
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-envelope me-2"></i>Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
