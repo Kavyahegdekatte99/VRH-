@@ -12,8 +12,13 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ url_for('index') }}">
-                <i class="bi bi-sofa me-2"></i>VINAYAK REXINE HOUSE
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/vrh-logo.svg') }}" 
+                     alt="VRH Logo" 
+                     class="navbar-logo me-2"
+                     style="height: 40px; width: auto;"
+                     onerror="this.style.display='none';">
+                <span>VINAYAK REXINE HOUSE</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

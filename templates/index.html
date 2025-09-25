@@ -5,9 +5,26 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1 class="display-4 fw-bold text-dark-blue">
-                    Welcome to <span class="text-gold">VINAYAK REXINE HOUSE</span>
-                </h1>
+                <div class="d-flex align-items-center mb-3">
+                    <!-- Company Logo -->
+                    <div class="logo-container me-3">
+                        <img src="{{ url_for('static', filename='images/vrh-logo.jpg') }}" 
+                             alt="VINAYAK REXINE HOUSE Logo" 
+                             class="company-logo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                             style="height: 80px; width: auto;">
+                        <!-- Fallback logo if image not found -->
+                        <div class="logo-fallback bg-gold text-white rounded-circle d-none align-items-center justify-content-center" 
+                             style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">
+                            VRH
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="display-4 fw-bold text-dark-blue mb-0">
+                            Welcome to <span class="text-gold">VINAYAK REXINE HOUSE</span>
+                        </h1>
+                    </div>
+                </div>
                 <p class="lead text-muted mb-4">
                     Discover our premium collection of rexine and upholstery materials. 
                     Quality products for all your furniture needs.
